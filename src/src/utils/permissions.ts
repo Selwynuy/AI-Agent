@@ -21,6 +21,7 @@ export interface RolePermissions {
   canViewFinancialData: boolean;
   canManageEvents: boolean;
   canManageContent: boolean;
+  canManageBlog: boolean;
 }
 
 export const PERMISSIONS: Record<UserRole, RolePermissions> = {
@@ -39,6 +40,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canViewFinancialData: false,
     canManageEvents: false,
     canManageContent: false,
+    canManageBlog: false,
   },
   developer: {
     canView: ['projects', 'units', 'sales', 'marketing', 'media', 'settings'],
@@ -55,6 +57,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canViewFinancialData: true,
     canManageEvents: true,
     canManageContent: true,
+    canManageBlog: true,
   },
   seller: {
     canView: ['properties', 'inquiries', 'performance', 'media', 'settings'],
@@ -71,6 +74,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canViewFinancialData: false,
     canManageEvents: false,
     canManageContent: false,
+    canManageBlog: false,
   },
   admin: {
     canView: ['overview', 'properties', 'users', 'agents', 'events', 'content', 'media', 'settings'],
@@ -87,6 +91,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canViewFinancialData: true,
     canManageEvents: true,
     canManageContent: true,
+    canManageBlog: true,
   },
 };
 

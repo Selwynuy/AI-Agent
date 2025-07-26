@@ -20,6 +20,7 @@ import {
 import { Button, Card, Input, Modal, Select, Textarea } from '../ui';
 import { ActionGuard } from './PermissionGuard';
 import { UserRole } from '../../utils/permissions';
+import RichTextEditor from './RichTextEditor';
 
 interface Property {
   id: string;
@@ -485,12 +486,13 @@ const PropertiesManager: React.FC<PropertiesManagerProps> = ({ userRole, userId 
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
-            <Textarea
+            <RichTextEditor
               value={formData.description}
-              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              rows={4}
-              required
+              onChange={(value) => setFormData({ ...formData, description: value })}
+              placeholder="Describe the property features, amenities, and highlights..."
+              label="Description"
+              rows={6}
+              showPreview={true}
             />
           </div>
 

@@ -75,9 +75,11 @@
 - `src/src/components/cms/PermissionGuard.tsx` – Permission guard component for conditional rendering based on user roles and permissions
 - `src/src/components/cms/AccessDenied.tsx` – Access denied component with user-friendly error messages and role information
 - `src/src/components/cms/CMSDashboard.tsx` – Role-based CMS dashboard component with permission-controlled navigation and content management
-- `src/src/components/cms/PropertiesManager.tsx` – Properties management component with permission-controlled CRUD operations
+- `src/src/components/cms/PropertiesManager.tsx` – Properties management component with permission-controlled CRUD operations and rich text editor integration
 - `src/src/components/cms/UsersManager.tsx` – Users management component with permission-controlled user administration
 - `src/src/components/cms/MediaLibrary.tsx` – Media library component with permission-controlled file upload and management
+- `src/src/components/cms/BlogPostManager.tsx` – Blog post management component with rich text editor and markdown support
+- `src/src/components/cms/RichTextEditor.tsx` – Custom rich text editor component with markdown formatting toolbar and preview functionality
 - `app/cms/page.tsx` – Main CMS page entry point with role-based routing and user context management
 
 ### Notes
@@ -265,7 +267,7 @@
   - [x] 15.1 Design role-based CMS dashboard UI (Agent, Developer, Seller, Admin)
   - [x] 15.2 Implement CRUD for properties, events, blog posts, and user management
   - [x] 15.3 Add permissions: restrict access and actions by role
-  - [ ] 15.4 Integrate rich text/markdown editor for listings and blog content
+  - [x] 15.4 Integrate rich text/markdown editor for listings and blog content
   - [x] 15.5 Enable media uploads (images, floorplans, docs) with preview and validation
   - [ ] 15.6 Add activity logs and audit trails for admin
   - [ ] 15.7 Build analytics widgets (views, leads, conversions) per role

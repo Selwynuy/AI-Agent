@@ -31,6 +31,7 @@ import { Button, Card, Input, Modal, Select } from '../ui';
 import PropertiesManager from './PropertiesManager';
 import UsersManager from './UsersManager';
 import MediaLibrary from './MediaLibrary';
+import BlogPostManager from './BlogPostManager';
 import PermissionGuard, { ActionGuard } from './PermissionGuard';
 import { 
   UserRole, 
@@ -283,7 +284,7 @@ const CMSDashboard: React.FC<CMSDashboardProps> = ({ userRole, userInfo }) => {
       case 'content':
         return (
           <PermissionGuard role={userRole} action="canManageContent">
-            <div className="p-6">Content management coming soon...</div>
+            <BlogPostManager userRole={userRole} />
           </PermissionGuard>
         );
       case 'media':
