@@ -119,8 +119,6 @@ const Login: React.FC = () => {
               crossOrigin={undefined}
               onResize={undefined}
               onResizeCapture={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
             />
           </div>
           
@@ -144,8 +142,6 @@ const Login: React.FC = () => {
                 crossOrigin={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
               />
               <button 
                 type="button"
@@ -172,8 +168,6 @@ const Login: React.FC = () => {
             placeholder={undefined}
             onResize={undefined}
             onResizeCapture={undefined}
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
           >
             {isLoading ? 'Signing in...' : 'Sign In'}
           </Button>

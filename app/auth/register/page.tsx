@@ -223,11 +223,11 @@ const Register: React.FC = () => {
                   className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
                   labelProps={{ className: "hidden" }}
                   required
-                  crossOrigin={undefined}
-                  onPointerEnterCapture={undefined}
-                  onPointerLeaveCapture={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
+                                     crossOrigin={undefined}
+                   onPointerEnterCapture={undefined}
+                   onPointerLeaveCapture={undefined}
+                   onResize={undefined}
+                   onResizeCapture={undefined}
                 />
                 {errors.firstName && (
                   <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
@@ -238,22 +238,22 @@ const Register: React.FC = () => {
                 <label htmlFor="lastName" className="mb-2 block font-medium text-gray-900 text-sm">
                   Last Name*
                 </label>
-                <Input
-                  id="lastName"
-                  color="gray"
-                  size="lg"
-                  type="text"
-                  value={formData.lastName}
-                  onChange={handleInputChange('lastName')}
-                  className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
-                  labelProps={{ className: "hidden" }}
-                  required
-                  crossOrigin={undefined}
-                  onPointerEnterCapture={undefined}
-                  onPointerLeaveCapture={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
+                                 <Input
+                   id="lastName"
+                   color="gray"
+                   size="lg"
+                   type="text"
+                   value={formData.lastName}
+                   onChange={handleInputChange('lastName')}
+                   className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
+                   labelProps={{ className: "hidden" }}
+                   required
+                   crossOrigin={undefined}
+                   onPointerEnterCapture={undefined}
+                   onPointerLeaveCapture={undefined}
+                   onResize={undefined}
+                   onResizeCapture={undefined}
+                 />
                 {errors.lastName && (
                   <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
                 )}
@@ -265,23 +265,23 @@ const Register: React.FC = () => {
             <label htmlFor="email" className="mb-2 block font-medium text-gray-900 text-sm">
               Email Address*
             </label>
-            <Input
-              id="email"
-              color="gray"
-              size="lg"
-              type="email"
-              value={formData.email}
-              onChange={handleInputChange('email')}
-              placeholder="name@mail.com"
-              className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
-              labelProps={{ className: "hidden" }}
-              required
-              crossOrigin={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              onResize={undefined}
-              onResizeCapture={undefined}
-            />
+                         <Input
+               id="email"
+               color="gray"
+               size="lg"
+               type="email"
+               value={formData.email}
+               onChange={handleInputChange('email')}
+               placeholder="name@mail.com"
+               className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
+               labelProps={{ className: "hidden" }}
+               required
+               crossOrigin={undefined}
+               onPointerEnterCapture={undefined}
+               onPointerLeaveCapture={undefined}
+               onResize={undefined}
+               onResizeCapture={undefined}
+             />
             <p className="text-sm text-gray-500 mt-1">
               We'll use this email to send you account updates and verification.
             </p>
@@ -295,22 +295,22 @@ const Register: React.FC = () => {
             <label htmlFor="phone" className="mb-2 block font-medium text-gray-900 text-sm">
               Phone Number (Optional)
             </label>
-            <Input
-              id="phone"
-              color="gray"
-              size="lg"
-              type="tel"
-              value={formData.phone}
-              onChange={handleInputChange('phone')}
-              placeholder="+1 (555) 123-4567"
-              className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
-              labelProps={{ className: "hidden" }}
-              crossOrigin={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              onResize={undefined}
-              onResizeCapture={undefined}
-            />
+                         <Input
+               id="phone"
+               color="gray"
+               size="lg"
+               type="tel"
+               value={formData.phone}
+               onChange={handleInputChange('phone')}
+               placeholder="+1 (555) 123-4567"
+               className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
+               labelProps={{ className: "hidden" }}
+               crossOrigin={undefined}
+               onPointerEnterCapture={undefined}
+               onPointerLeaveCapture={undefined}
+               onResize={undefined}
+               onResizeCapture={undefined}
+             />
             <p className="text-sm text-gray-500 mt-1">
               Optional. We may use this for account security notifications.
             </p>
@@ -325,22 +325,22 @@ const Register: React.FC = () => {
               Password*
             </label>
             <div className="relative">
-              <Input
-                id="password"
-                size="lg"
-                value={formData.password}
-                onChange={handleInputChange('password')}
-                placeholder="********"
-                labelProps={{ className: "hidden" }}
-                className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200 !pr-12"
-                type={passwordShown ? "text" : "password"}
-                required
-                crossOrigin={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-                onResize={undefined}
-                onResizeCapture={undefined}
-              />
+                             <Input
+                 id="password"
+                 size="lg"
+                 value={formData.password}
+                 onChange={handleInputChange('password')}
+                 placeholder="********"
+                 labelProps={{ className: "hidden" }}
+                 className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200 !pr-12"
+                 type={passwordShown ? "text" : "password"}
+                 required
+                 crossOrigin={undefined}
+                 onPointerEnterCapture={undefined}
+                 onPointerLeaveCapture={undefined}
+                 onResize={undefined}
+                 onResizeCapture={undefined}
+               />
               <button 
                 type="button"
                 onClick={togglePasswordVisibility} 
@@ -367,22 +367,22 @@ const Register: React.FC = () => {
               Confirm Password*
             </label>
             <div className="relative">
-              <Input
-                id="confirmPassword"
-                size="lg"
-                value={formData.confirmPassword}
-                onChange={handleInputChange('confirmPassword')}
-                placeholder="********"
-                labelProps={{ className: "hidden" }}
-                className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200 !pr-12"
-                type={confirmPasswordShown ? "text" : "password"}
-                required
-                crossOrigin={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-                onResize={undefined}
-                onResizeCapture={undefined}
-              />
+                             <Input
+                 id="confirmPassword"
+                 size="lg"
+                 value={formData.confirmPassword}
+                 onChange={handleInputChange('confirmPassword')}
+                 placeholder="********"
+                 labelProps={{ className: "hidden" }}
+                 className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200 !pr-12"
+                 type={confirmPasswordShown ? "text" : "password"}
+                 required
+                 crossOrigin={undefined}
+                 onPointerEnterCapture={undefined}
+                 onPointerLeaveCapture={undefined}
+                 onResize={undefined}
+                 onResizeCapture={undefined}
+               />
               <button 
                 type="button"
                 onClick={toggleConfirmPasswordVisibility} 
@@ -429,20 +429,20 @@ const Register: React.FC = () => {
             )}
           </div>
 
-            <Button 
-              type="submit"
-              color="blue" 
-              size="lg" 
-              className="mt-6 mb-3 !bg-blue-600 !text-white hover:!bg-blue-700 !py-3 !px-6 !font-medium !text-base !rounded-lg !shadow-md hover:!shadow-lg !transition-all !duration-200" 
-              fullWidth
-              loading={isLoading || authLoading}
-              disabled={isLoading || authLoading || registrationSuccess}
-              placeholder={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              onResize={undefined}
-              onResizeCapture={undefined}
-            >
+                         <Button 
+               type="submit"
+               color="blue" 
+               size="lg" 
+               className="mt-6 mb-3 !bg-blue-600 !text-white hover:!bg-blue-700 !py-3 !px-6 !font-medium !text-base !rounded-lg !shadow-md hover:!shadow-lg !transition-all !duration-200" 
+               fullWidth
+               loading={isLoading || authLoading}
+               disabled={isLoading || authLoading || registrationSuccess}
+               placeholder={undefined}
+               onPointerEnterCapture={undefined}
+               onPointerLeaveCapture={undefined}
+               onResize={undefined}
+               onResizeCapture={undefined}
+             >
               {registrationSuccess 
                 ? 'Registration Complete!' 
                 : isLoading || authLoading 
