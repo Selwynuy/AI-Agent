@@ -43,8 +43,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
       ref={ref}
       onResize={() => {}}
       onResizeCapture={() => {}}
-      onPointerEnterCapture={() => {}}
-      onPointerLeaveCapture={() => {}}
     >
       {loading ? (
         <div className="flex items-center justify-center">

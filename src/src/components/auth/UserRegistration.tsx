@@ -288,8 +288,6 @@ const UserRegistration: React.FC = () => {
               crossOrigin={undefined}
               onResize={undefined}
               onResizeCapture={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
             />
           </div>
 
@@ -313,8 +311,6 @@ const UserRegistration: React.FC = () => {
               crossOrigin={undefined}
               onResize={undefined}
               onResizeCapture={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
             />
             <p className="text-sm text-gray-500 mt-1">
               Must be at least 8 characters with uppercase, lowercase, number, and special character.
@@ -341,8 +337,6 @@ const UserRegistration: React.FC = () => {
               crossOrigin={undefined}
               onResize={undefined}
               onResizeCapture={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
             />
           </div>
 
@@ -368,8 +362,6 @@ const UserRegistration: React.FC = () => {
                 crossOrigin={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
               />
             </div>
             <div>
@@ -391,8 +383,6 @@ const UserRegistration: React.FC = () => {
                 crossOrigin={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
               />
             </div>
           </div>
@@ -416,8 +406,6 @@ const UserRegistration: React.FC = () => {
               crossOrigin={undefined}
               onResize={undefined}
               onResizeCapture={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
             />
           </div>
 
@@ -470,8 +458,6 @@ const UserRegistration: React.FC = () => {
             placeholder={undefined}
             onResize={undefined}
             onResizeCapture={undefined}
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
           >
             {isLoading ? 'Creating Account...' : 'Create Account'}
           </Button>

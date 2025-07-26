@@ -87,16 +87,10 @@ export const useSupabaseAuth = () => {
     password: string,
     userData: { firstName: string; lastName: string; phone?: string; roleName?: string }
   ) => {
+    // Only send email and password to Supabase Auth
     const { data, error } = await supabase.auth.signUp({
       email,
-      password,
-      options: {
-        data: {
-          first_name: userData.firstName,
-          last_name: userData.lastName,
-          phone: userData.phone || ''
-        }
-      }
+      password
     })
 
     if (error) throw error
@@ -128,7 +122,8 @@ export const useSupabaseAuth = () => {
 
       if (profileError) {
         console.error('Error creating profile:', profileError)
-        throw profileError
+        // Optionally throw the error if profile creation is critical
+        // throw profileError
       }
     }
 

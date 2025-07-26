@@ -242,6 +242,8 @@ const ResetPassword: React.FC = () => {
             placeholder={undefined}
             onResize={undefined}
             onResizeCapture={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
           >
             {isLoading ? 'Sending...' : 'Send Reset Link'}
           </Button>
