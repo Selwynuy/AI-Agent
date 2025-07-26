@@ -7,7 +7,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { ThemeToggle } from '../ui/ThemeToggle';
 
 const TopPixNavbar: React.FC = () => {
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout, isAdmin } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const profileDropdownRef = useRef<HTMLDivElement>(null);
@@ -43,8 +43,7 @@ const TopPixNavbar: React.FC = () => {
     { name: 'Events', path: '/events' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'User Dashboard', path: '/user' }
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -68,7 +67,7 @@ const TopPixNavbar: React.FC = () => {
               <Link 
                 key={item.name}
                 href={item.path}
-                className="text-card-foreground hover:text-primary transition-colors font-medium text-sm whitespace-nowrap"
+                className="text-card-foreground hover:text-orange-500 transition-colors font-medium text-sm whitespace-nowrap"
               >
                 {item.name}
               </Link>
@@ -87,7 +86,7 @@ const TopPixNavbar: React.FC = () => {
           <div className="relative" ref={profileDropdownRef}>
             <button
               onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
-              className="flex items-center space-x-2 text-card-foreground hover:text-primary transition-colors font-medium"
+              className="flex items-center space-x-2 text-card-foreground hover:text-orange-500 transition-colors font-medium"
             >
               <UserIcon className="h-5 w-5" />
               <span>{user?.firstName || 'Profile'}</span>
@@ -98,26 +97,35 @@ const TopPixNavbar: React.FC = () => {
             {isProfileDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-card rounded-lg shadow-lg py-2 z-50 border border-border">
                 <Link 
+                  href="/profile"
+                  className="block px-4 py-2 text-card-foreground hover:text-primary transition-colors"
+                  onClick={() => setIsProfileDropdownOpen(false)}
+                >
+                  Profile
+                </Link>
+                <Link 
                   href="/user"
                   className="block px-4 py-2 text-card-foreground hover:text-primary transition-colors"
                   onClick={() => setIsProfileDropdownOpen(false)}
                 >
-                  My Profile
+                  User Dashboard
                 </Link>
-                <Link 
-                  href="/user/settings"
-                  className="block px-4 py-2 text-card-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsProfileDropdownOpen(false)}
-                >
-                  Settings
-                </Link>
+                {isAdmin && (
+                  <Link 
+                    href="/admin"
+                    className="block px-4 py-2 text-card-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsProfileDropdownOpen(false)}
+                  >
+                    Admin Dashboard
+                  </Link>
+                )}
                 <hr className="my-1 border-border" />
                 <button
                   onClick={() => {
                     handleLogout();
                     setIsProfileDropdownOpen(false);
                   }}
-                  className="block w-full text-left px-4 py-2 text-card-foreground hover:text-primary transition-colors"
+                  className="block w-full text-left px-4 py-2 text-red-600 hover:text-red-700 transition-colors"
                 >
                   Logout
                 </button>
@@ -128,7 +136,7 @@ const TopPixNavbar: React.FC = () => {
           <>
             <Link 
               href="/auth/login"
-              className="text-card-foreground hover:text-primary transition-colors font-medium"
+              className="text-card-foreground hover:text-orange-500 transition-colors font-medium"
             >
               Login
             </Link>
@@ -145,7 +153,7 @@ const TopPixNavbar: React.FC = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMobileMenu}
-        className="lg:hidden text-card-foreground hover:text-primary transition-colors"
+        className="lg:hidden text-card-foreground hover:text-orange-500 transition-colors"
         aria-label="Toggle mobile menu"
       >
         {isMobileMenuOpen ? (
@@ -186,12 +194,28 @@ const TopPixNavbar: React.FC = () => {
                       <span>{user?.firstName || 'Profile'}</span>
                     </Link>
                     <Link 
+                      href="/user"
+                      className="block pl-7 text-card-foreground hover:text-primary transition-colors font-medium py-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      User Dashboard
+                    </Link>
+                    <Link 
                       href="/user/settings"
                       className="block pl-7 text-card-foreground hover:text-primary transition-colors font-medium py-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Settings
                     </Link>
+                    {isAdmin && (
+                      <Link 
+                        href="/admin"
+                        className="block pl-7 text-card-foreground hover:text-primary transition-colors font-medium py-2"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Admin Dashboard
+                      </Link>
+                    )}
                     <button
                       onClick={() => {
                         handleLogout();
