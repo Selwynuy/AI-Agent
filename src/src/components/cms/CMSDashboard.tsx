@@ -24,7 +24,8 @@ import {
   HomeIcon,
   HeartIcon,
   EnvelopeIcon,
-  ShieldExclamationIcon
+  ShieldExclamationIcon,
+  ClipboardDocumentListIcon
 } from '@heroicons/react/24/outline';
 import DashboardLayout from '../layout/DashboardLayout';
 import { Button, Card, Input, Modal, Select } from '../ui';
@@ -32,6 +33,7 @@ import PropertiesManager from './PropertiesManager';
 import UsersManager from './UsersManager';
 import MediaLibrary from './MediaLibrary';
 import BlogPostManager from './BlogPostManager';
+import ActivityLogger from './ActivityLogger';
 import PermissionGuard, { ActionGuard } from './PermissionGuard';
 import { 
   UserRole, 
@@ -96,6 +98,7 @@ const CMSDashboard: React.FC<CMSDashboardProps> = ({ userRole, userInfo }) => {
       { id: 'events', label: 'Events', icon: CalendarIcon, path: '/cms' },
       { id: 'content', label: 'Content', icon: DocumentTextIcon, path: '/cms' },
       { id: 'media', label: 'Media Library', icon: PhotoIcon, path: '/cms' },
+      { id: 'activity_logs', label: 'Activity Logs', icon: ClipboardDocumentListIcon, path: '/cms' },
       { id: 'settings', label: 'Settings', icon: Cog6ToothIcon, path: '/cms' }
     ];
 
@@ -156,8 +159,57 @@ const CMSDashboard: React.FC<CMSDashboardProps> = ({ userRole, userInfo }) => {
     setActiveTab(tabId);
   };
 
+  const analytics = {
+    agent: {
+      views: 1240,
+      leads: 32,
+      conversions: 6
+    },
+    developer: {
+      views: 8420,
+      leads: 210,
+      conversions: 48
+    },
+    seller: {
+      views: 560,
+      leads: 12,
+      conversions: 2
+    },
+    admin: {
+      views: 15400,
+      leads: 420,
+      conversions: 88
+    }
+  };
+
+  const roleAnalytics = analytics[userRole] || analytics.agent;
+
   const renderOverview = () => (
     <div className="space-y-6">
+      {/* Analytics Widgets */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card className="p-6 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-600">Views</p>
+            <p className="text-2xl font-bold text-gray-900">{roleAnalytics.views.toLocaleString()}</p>
+          </div>
+          <EyeIcon className="h-8 w-8 text-blue-500" />
+        </Card>
+        <Card className="p-6 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-600">Leads</p>
+            <p className="text-2xl font-bold text-gray-900">{roleAnalytics.leads.toLocaleString()}</p>
+          </div>
+          <UserGroupIcon className="h-8 w-8 text-green-500" />
+        </Card>
+        <Card className="p-6 flex items-center justify-between">
+          <div>
+            <p className="text-sm font-medium text-gray-600">Conversions</p>
+            <p className="text-2xl font-bold text-gray-900">{roleAnalytics.conversions.toLocaleString()}</p>
+          </div>
+          <CheckIcon className="h-8 w-8 text-indigo-500" />
+        </Card>
+      </div>
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card className="p-6">
@@ -291,6 +343,12 @@ const CMSDashboard: React.FC<CMSDashboardProps> = ({ userRole, userInfo }) => {
         return (
           <PermissionGuard role={userRole} action="canUploadMedia">
             <MediaLibrary userRole={userRole} />
+          </PermissionGuard>
+        );
+      case 'activity_logs':
+        return (
+          <PermissionGuard role={userRole} action="canViewActivityLogs">
+            <ActivityLogger userRole={userRole} />
           </PermissionGuard>
         );
       case 'settings':

@@ -21,6 +21,7 @@ import { Button, Card, Input, Modal, Select, Textarea } from '../ui';
 import { ActionGuard } from './PermissionGuard';
 import { UserRole } from '../../utils/permissions';
 import RichTextEditor from './RichTextEditor';
+import { logDataChange } from '../../utils/activityLog';
 
 interface Property {
   id: string;
@@ -182,8 +183,23 @@ const PropertiesManager: React.FC<PropertiesManagerProps> = ({ userRole, userId 
 
   const handleDeleteProperty = async (propertyId: string) => {
     if (confirm('Are you sure you want to delete this property?')) {
+      const propertyToDelete = properties.find(p => p.id === propertyId);
       // Simulate API call
       setProperties(properties.filter(p => p.id !== propertyId));
+      
+      // Log the activity
+      if (propertyToDelete) {
+        logDataChange(
+          userId,
+          'Current User', // In real app, get from context
+          userRole,
+          'deleted',
+          'property',
+          `Deleted property: ${propertyToDelete.title}`,
+          propertyId,
+          propertyToDelete.title
+        );
+      }
     }
   };
 
@@ -214,6 +230,18 @@ const PropertiesManager: React.FC<PropertiesManagerProps> = ({ userRole, userId 
           : p
       );
       setProperties(updatedProperties);
+      
+      // Log the activity
+      logDataChange(
+        userId,
+        'Current User', // In real app, get from context
+        userRole,
+        'updated',
+        'property',
+        `Updated property: ${formData.title}`,
+        editingProperty.id,
+        formData.title
+      );
     } else {
       // Add new property
       const newPropertyWithId: Property = {
@@ -224,6 +252,18 @@ const PropertiesManager: React.FC<PropertiesManagerProps> = ({ userRole, userId 
         updatedAt: new Date().toISOString()
       };
       setProperties([...properties, newPropertyWithId]);
+      
+      // Log the activity
+      logDataChange(
+        userId,
+        'Current User', // In real app, get from context
+        userRole,
+        'created',
+        'property',
+        `Added new property: ${formData.title}`,
+        newPropertyWithId.id,
+        formData.title
+      );
     }
 
     setShowModal(false);

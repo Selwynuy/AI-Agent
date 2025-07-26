@@ -6,6 +6,7 @@ import { Modal } from '../ui/Modal';
 import { Card } from '../ui/Card';
 import { ActionGuard } from './PermissionGuard';
 import RichTextEditor from './RichTextEditor';
+import { logDataChange } from '../../utils/activityLog';
 import { 
   PlusIcon, 
   PencilIcon, 
@@ -158,7 +159,22 @@ When investing in real estate, consider these key factors:
 
   const handleDeletePost = (postId: string) => {
     if (confirm('Are you sure you want to delete this blog post?')) {
+      const postToDelete = blogPosts.find(post => post.id === postId);
       setBlogPosts(blogPosts.filter(post => post.id !== postId));
+      
+      // Log the activity
+      if (postToDelete) {
+        logDataChange(
+          'current-user-id', // In real app, get from context
+          'Current User', // In real app, get from context
+          userRole,
+          'deleted',
+          'blog_post',
+          `Deleted blog post: ${postToDelete.title}`,
+          postId,
+          postToDelete.title
+        );
+      }
     }
   };
 
@@ -184,6 +200,18 @@ When investing in real estate, consider these key factors:
             }
           : post
       ));
+      
+      // Log the activity
+      logDataChange(
+        'current-user-id', // In real app, get from context
+        'Current User', // In real app, get from context
+        userRole,
+        'updated',
+        'blog_post',
+        `Updated blog post: ${formData.title}`,
+        editingPost.id,
+        formData.title
+      );
     } else {
       // Create new post
       const newPost: BlogPost = {
@@ -197,6 +225,18 @@ When investing in real estate, consider these key factors:
         readTime: Math.ceil(formData.content.split(' ').length / 200) // Rough estimate
       };
       setBlogPosts([newPost, ...blogPosts]);
+      
+      // Log the activity
+      logDataChange(
+        'current-user-id', // In real app, get from context
+        'Current User', // In real app, get from context
+        userRole,
+        'created',
+        'blog_post',
+        `Created new blog post: ${formData.title}`,
+        newPost.id,
+        formData.title
+      );
     }
 
     setShowModal(false);

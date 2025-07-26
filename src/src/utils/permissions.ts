@@ -22,6 +22,7 @@ export interface RolePermissions {
   canManageEvents: boolean;
   canManageContent: boolean;
   canManageBlog: boolean;
+  canViewActivityLogs: boolean;
 }
 
 export const PERMISSIONS: Record<UserRole, RolePermissions> = {
@@ -41,6 +42,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canManageEvents: false,
     canManageContent: false,
     canManageBlog: false,
+    canViewActivityLogs: false,
   },
   developer: {
     canView: ['projects', 'units', 'sales', 'marketing', 'media', 'settings'],
@@ -58,6 +60,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canManageEvents: true,
     canManageContent: true,
     canManageBlog: true,
+    canViewActivityLogs: false,
   },
   seller: {
     canView: ['properties', 'inquiries', 'performance', 'media', 'settings'],
@@ -75,9 +78,10 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canManageEvents: false,
     canManageContent: false,
     canManageBlog: false,
+    canViewActivityLogs: false,
   },
   admin: {
-    canView: ['overview', 'properties', 'users', 'agents', 'events', 'content', 'media', 'settings'],
+    canView: ['overview', 'properties', 'users', 'agents', 'events', 'content', 'media', 'settings', 'activity_logs'],
     canCreate: ['properties', 'users', 'agents', 'events', 'content', 'media'],
     canEdit: ['properties', 'users', 'agents', 'events', 'content', 'media'],
     canDelete: ['properties', 'users', 'agents', 'events', 'content', 'media'],
@@ -92,6 +96,7 @@ export const PERMISSIONS: Record<UserRole, RolePermissions> = {
     canManageEvents: true,
     canManageContent: true,
     canManageBlog: true,
+    canViewActivityLogs: true,
   },
 };
 
