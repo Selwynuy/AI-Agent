@@ -224,10 +224,8 @@ const Register: React.FC = () => {
                   labelProps={{ className: "hidden" }}
                   required
                   crossOrigin={undefined}
-                  onPointerEnterCapture={undefined}
-                  onPointerLeaveCapture={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
+                  onResize={() => {}}
+                  onResizeCapture={() => {}}
                 />
                 {errors.firstName && (
                   <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
@@ -249,10 +247,8 @@ const Register: React.FC = () => {
                   labelProps={{ className: "hidden" }}
                   required
                   crossOrigin={undefined}
-                  onPointerEnterCapture={undefined}
-                  onPointerLeaveCapture={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
+                  onResize={() => {}}
+                  onResizeCapture={() => {}}
                 />
                 {errors.lastName && (
                   <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
@@ -277,10 +273,8 @@ const Register: React.FC = () => {
               labelProps={{ className: "hidden" }}
               required
               crossOrigin={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              onResize={undefined}
-              onResizeCapture={undefined}
+              onResize={() => {}}
+              onResizeCapture={() => {}}
             />
             <p className="text-sm text-gray-500 mt-1">
               We'll use this email to send you account updates and verification.
@@ -306,10 +300,8 @@ const Register: React.FC = () => {
               className="w-full !text-gray-900 placeholder:!text-gray-500 placeholder:!opacity-100 focus:!border-t-blue-500 !border-t-blue-gray-200"
               labelProps={{ className: "hidden" }}
               crossOrigin={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              onResize={undefined}
-              onResizeCapture={undefined}
+              onResize={() => {}}
+              onResizeCapture={() => {}}
             />
             <p className="text-sm text-gray-500 mt-1">
               Optional. We may use this for account security notifications.
@@ -336,10 +328,8 @@ const Register: React.FC = () => {
                 type={passwordShown ? "text" : "password"}
                 required
                 crossOrigin={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-                onResize={undefined}
-                onResizeCapture={undefined}
+                onResize={() => {}}
+                onResizeCapture={() => {}}
               />
               <button 
                 type="button"
@@ -378,10 +368,8 @@ const Register: React.FC = () => {
                 type={confirmPasswordShown ? "text" : "password"}
                 required
                 crossOrigin={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-                onResize={undefined}
-                onResizeCapture={undefined}
+                onResize={() => {}}
+                onResizeCapture={() => {}}
               />
               <button 
                 type="button"
@@ -438,10 +426,8 @@ const Register: React.FC = () => {
               loading={isLoading || authLoading}
               disabled={isLoading || authLoading || registrationSuccess}
               placeholder={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              onResize={undefined}
-              onResizeCapture={undefined}
+              onResize={() => {}}
+              onResizeCapture={() => {}}
             >
               {registrationSuccess 
                 ? 'Registration Complete!' 

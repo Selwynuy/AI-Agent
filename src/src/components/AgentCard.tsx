@@ -20,7 +20,7 @@ const AgentCard: React.FC<AgentCardProps> = ({
 }) => (
   <div className="group relative bg-card border border-border rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden max-w-xs mx-auto" style={{minWidth: '220px'}}>
     {/* Top Section - Profile Image with Margins */}
-    <div className="relative h-40 w-full bg-muted p-5">
+    <div className="relative h-82 w-full bg-muted p-5">
       <img 
         src={avatarUrl} 
         alt={name} 

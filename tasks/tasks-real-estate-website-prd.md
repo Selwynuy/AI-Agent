@@ -270,3 +270,28 @@
   - [x] 15.5 Enable media uploads (images, floorplans, docs) with preview and validation - [x] 15.6 Add activity logs and audit trails for admin - [x] 15.7 Build analytics widgets (views, leads, conversions) per role - [x] 15.8 Ensure responsive design and accessibility - [x] 15.9 Document CMS API endpoints and usage
 
 - 🎯 **Next step**: Continue to Task 15.4 or any remaining tasks.
+
+- [ ] 16.0 Complete Functional Agents Page
+  - [ ] 16.1 Add search and filtering functionality to agents directory
+  - [ ] 16.2 Implement agent rating and review system
+  - [ ] 16.3 Add agent availability status and response time indicators
+  - [ ] 16.4 Create agent comparison feature
+  - [ ] 16.5 Add agent contact and inquiry tracking
+
+- [ ] 17.0 Complete Agent Dashboard with Messaging
+  - [ ] 17.1 Implement real-time messaging between buyers and sellers
+  - [ ] 17.2 Add message notifications and read receipts
+  - [ ] 17.3 Create message history and search functionality
+  - [ ] 17.4 Add file/image sharing in messages
+  - [ ] 17.5 Implement message templates and quick responses
+  - [ ] 17.6 Add agent availability settings and auto-replies
+
+- [ ] 18.0 Complete CMS for Agent Dashboard
+  - [ ] 18.1 Add property management CRUD operations
+  - [ ] 18.2 Implement inquiry management and lead tracking
+  - [ ] 18.3 Add performance analytics and reporting
+  - [ ] 18.4 Create appointment scheduling system
+  - [ ] 18.5 Add client relationship management (CRM)
+  - [ ] 18.6 Implement document management and e-signatures
+
+**🎯 Next step**: Start with Task 16.1 - Add search and filtering functionality to agents directory.
