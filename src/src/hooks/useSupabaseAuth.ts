@@ -95,7 +95,8 @@ export const useSupabaseAuth = () => {
 
     if (error) throw error
 
-    // Create profile record with role
+
+    // Create profile record after successful signUp
     if (data.user) {
       // Get the role ID for the selected role (default to buyer if not specified)
       const roleName = userData.roleName || 'buyer'
